@@ -4,18 +4,26 @@ Sources for practice lecture about containers used in NSWI026 MFF UK and SEPA4M3
 
 ## Tasks
 
-1. Run image `quay.io/podman/hello`
-    - https://learnxinyminutes.com/docs/docker/
+1. Run the image `quay.io/podman/hello`
+    - Refer to https://learnxinyminutes.com/docs/docker/
 
-2. Create a Dockerfile that run `apache2` in Debian Linux
-    - Serve a html file from `task_2` folder on <http://localhost:8090/>
-    - Use command `apachectl -D FOREGROUND`, install `apache2`
-    - Try it on <http://localhost:8090/>
+2. Create and run simple web server
+    - Create a `Dockerfile` in the `task_2` folder 
+    - Select Debian Linux as your base image
+    - Install the `apache2` package
+    - Use the command `apachectl -D FOREGROUND` to start the server
+    - (Optional) Try to serve an HTML file from the `task_2` folder by coping it to `/var/www/html` in the image
+    - Build the image using `task_2` folder
+    - Run container
+        - Apache runs on port 80 in the container; map this port to 8080 on your machine
+        - Try it on <http://localhost:8080/>
 
 3. Try a Redis + Flask with podman-compose
-    - Use a compose from `task_3` or fetch https://github.com/docker/awesome-compose/tree/master/flask-redis
-    - Try it on <http://localhost:8000/>
+    - Use a compose file from `task_3` or fetch https://github.com/docker/awesome-compose/tree/master/flask-redis
+        - Use `podman compose up` in folder `task_3`
+    - Review files in the `task_3` folder
+    - Try it at <http://localhost:8000/>
 
 4. Crate own image for FlightLog
-    - Java - https://spring.io/guides/topicals/spring-boot-docker/ 
+    - Java - https://spring.io/guides/gs/spring-boot-docker
     - .NET - https://learn.microsoft.com/en-us/dotnet/core/docker/build-container
